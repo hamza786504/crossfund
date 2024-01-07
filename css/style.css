@@ -1,20 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 * {
   padding: 0;
   margin: 0;
   outline: none;
   box-sizing: border-box;
   user-select: none;
+  font-family: "Poppins", sans-serif;
 }
 :root {
-  
+  --pink: #ea3568;
 }
-@font-face {
-  font-family: "Avenir";
-  src: url("/font/Avenir\ Next.ttf");
-}
-* {
-  font-family: "Avenir";
-}
+
 html,
 body {
   overflow-x: none;
@@ -27,9 +23,76 @@ a:hover {
   text-decoration: none;
 }
 
+.banner {
+  background-image: url("../images/background-image.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow-y: hidden;
+}
+.logo_cover img.logo_image {
+  height: 3rem;
+}
+
+button.button {
+  border: none;
+  background-color: var(--pink);
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  padding: 0.5rem 0.8rem;
+}
+.banner .content {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50% , 0%); /* Combine both transformations */
+  bottom: 15vh;
+  animation: content_animation 5s linear;
+}
+
+@keyframes content_animation {
+  0% {
+    bottom: 0;
+    transform: translate(-50% , 100%);
+  }
+  100% {
+    bottom: 15vh;
+    transform: translate(-50% , 0%); 
+  }
+}
+
+
+.banner .content h2 {
+  color: white;
+  font-size: 0.87rem;
+}
+
+.banner .content h2:first-child,
+.banner .content h2:last-child {
+  color: var(--pink);
+}
+
 /* bootstrap breakpoints media queries */
-@media screen and (min-width: 576px){}
-@media screen and (min-width: 768px){}
-@media screen and (min-width: 992px){}
-@media screen and (min-width: 1200px){}
-@media screen and (min-width: 1400px){}
+@media screen and (min-width: 576px) {
+  .banner .content h2 {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .logo_cover img.logo_image {
+    height: 68px;
+  }
+  .banner .content h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 1400px) {
+}
