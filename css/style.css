@@ -88,6 +88,7 @@ body {
 .icons{
   position: fixed;
   bottom: 5vh;
+  z-index: 100;
   right: 30px;
 }
 .icons .icon{
@@ -137,6 +138,428 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+
+
+
+
+
+
+
+.footer{
+  background: conic-gradient(from 90deg at 50% 50%, #350606 50%, #bc0101 100%);
+  width: 100%;
+  padding: 2.3rem 0;
+  min-height: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hide {
+  display: none!important;
+}
+
+
+.gallery-wrapper {
+  position: relative;
+  z-index: 1;
+  /* aspect-ratio: 2/1; */
+}
+
+.gallery-wrapper .content {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3vh;
+  margin: 0 auto;
+}
+
+.gallery-wrapper .content .gallery.full {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-container .swiper-wrapper {
+  display: flex;
+  /* height: 80vw; */
+  align-items: center;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-container .swiper-slide {
+  position: relative;
+  max-height: 250px;
+  height: 100%;
+  transition: all .4s ease-out;
+  box-sizing: border-box;
+  width: auto;
+  opacity: 1;
+  overflow: hidden;
+  border-radius: 13px;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-container .swiper-slide.swiper-slide-prev,
+.gallery-wrapper .content .gallery.full .swiper-container .swiper-slide.swiper-slide-next {
+  width: 20%!important;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-container .swiper-slide.swiper-slide-active {
+  max-height: 300px;
+  height: 100%;
+  width: 60%!important;
+  opacity: 1;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-container .swiper-slide.swiper-slide-active:hover .zoom {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-container .swiper-slide .image {
+  width: 100%;
+  height: 100%;
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-container .swiper-slide .image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-container .swiper-slide .overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 50px 50px 30px 50px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease-out;
+
+}
+
+.gallery-wrapper .content .gallery.full .swiper-container .swiper-slide.swiper-slide-active .overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-next-button,
+.gallery-wrapper .content .gallery.full .swiper-prev-button {
+  position: absolute;
+  z-index: 99;
+  outline: none;
+  transition: all .2s linear;
+  width: 20%;
+  height: 50vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-next-button.swiper-button-disabled,
+.gallery-wrapper .content .gallery.full .swiper-prev-button.swiper-button-disabled {
+  opacity: .2;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-next-button em,
+.gallery-wrapper .content .gallery.full .swiper-prev-button em {
+  font-size: 68px;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-next-button {
+  right: 5.6vw;
+  padding-left: 5vw;
+  justify-content: flex-start;
+}
+
+.gallery-wrapper .content .gallery.full .swiper-prev-button {
+  left: 5.6vw;
+  padding-right: 5vw;
+}
+
+
+.gallery-wrapper .content .gallery.thumb {
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.gallery-wrapper .content .gallery.thumb .swiper-container {
+  width: 100%;
+}
+
+.gallery-wrapper .content .gallery.thumb .swiper-container .swiper-wrapper .swiper-slide {
+  position: relative;
+  height: 10vh;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.gallery-wrapper .content .gallery.thumb .swiper-container .swiper-slide.swiper-slide-thumb-active .image {
+  box-shadow: inset 0px 0px 0px 2px #ed1b28;
+  padding: 2px;
+}
+
+.gallery-wrapper .content .gallery.thumb .swiper-container .swiper-slide .image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery-wrapper .content .gallery.thumb .swiper-container .swiper-slide .image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.gallery-wrapper .content .gallery.thumb .swiper-container .swiper-slide .image .overlay {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  background-color: rgba(43, 44, 54, .6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  opacity: 0;
+  transition: all .2s linear;
+}
+
+.gallery-wrapper .content .gallery.thumb .swiper-container .swiper-next-button,
+.gallery-wrapper .content .gallery.thumb .swiper-container .swiper-prev-button {
+  position: absolute;
+  z-index: 99;
+  outline: none;
+  transition: all .2s linear;
+  width: 32px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ed1b28;
+  cursor: pointer;
+}
+
+.gallery-wrapper .content .gallery.thumb .swiper-container .swiper-next-button:hover,
+.gallery-wrapper .content .gallery.thumb .swiper-container .swiper-prev-button:hover {
+  background-color: #b80013;
+}
+
+.gallery-wrapper .content .gallery.thumb .swiper-container .swiper-next-button.swiper-button-disabled,
+.gallery-wrapper .content .gallery.thumb .swiper-container .swiper-prev-button.swiper-button-disabled {
+  opacity: .2;
+}
+
+.gallery-wrapper .content .gallery.thumb .swiper-next-button em,
+.gallery-wrapper .content .gallery.thumb .swiper-prev-button em {
+  transform: rotate(180deg);
+}
+
+.gallery-wrapper .content .signature {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+}
+
+.gallery-wrapper .content .signature h3 {
+  font-weight: 600;
+  font-size: .926em;
+  color: #ed1b28;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.gallery-wrapper .content .signature a,
+.gallery-wrapper .content .signature em {
+  text-decoration: none;
+  color: #777;
+  margin-right: 5px;
+  font-size: .88em;
+  transition: all .2s linear;
+}
+
+.gallery-wrapper .content .signature a:hover,
+.gallery-wrapper .content .signature em:hover {
+  color: #aaa;
+}
+
+@media only screen and (max-width: 1024px) {
+  .gallery-wrapper .content {
+      padding: 5vh 0;
+  }
+
+  .gallery-wrapper .content .gallery.full .swiper-container .swiper-wrapper {
+      /* height: 70vh; */
+  }
+
+  .gallery-wrapper .content .gallery.full .swiper-container .swiper-slide {
+      height: 30vh;
+  }
+
+  .gallery-wrapper .content .gallery.full .swiper-container .swiper-slide.swiper-slide-prev,
+  .gallery-wrapper .content .gallery.full .swiper-container .swiper-slide.swiper-slide-next {
+      width: 10%!important;
+  }
+
+  .gallery-wrapper .content .gallery.full .swiper-container .swiper-slide.swiper-slide-active {
+      /* height: 40vh; */
+      height: 80vw;
+      max-height: 300px;
+      width: 80%!important;
+  }
+
+  .gallery-wrapper .content .gallery.full .swiper-next-button,
+  .gallery-wrapper .content .gallery.full .swiper-prev-button {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .gallery-wrapper .content .gallery.full .swiper-next-button {
+      padding-left: 0;
+  }
+
+  .gallery-wrapper .content .gallery.full .swiper-prev-button {
+      padding-right: 0;
+  }
+
+  .gallery-wrapper .content .gallery.thumb {
+      padding: 0 30px;
+      max-width: 100%;
+  }
+
+  .gallery-wrapper .content .gallery.thumb .swiper-container .swiper-wrapper .swiper-slide {
+      height: 80px;
+  }
+
+  .gallery-wrapper .content .gallery.thumb .swiper-next-button {
+      right: 10px;
+  }
+
+  .gallery-wrapper .content .gallery.thumb .swiper-prev-button {
+      left: 10px;
+  }
+
+  .signature {
+      display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* bootstrap breakpoints media queries */
 @media screen and (min-width: 576px) {
   .banner .content h2 {
@@ -150,6 +573,9 @@ body {
   .banner .content h2 {
     font-size: 1.5rem;
   }
+  .footer{
+    padding: 2.3rem;
+  }  
 }
 @media screen and (min-width: 992px) {
 }
